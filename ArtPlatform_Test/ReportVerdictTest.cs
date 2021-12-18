@@ -1,5 +1,6 @@
 using ArtPlatform.Models;
 using NUnit.Framework;
+using System;
 
 namespace ArtPlatform_Test
 {
@@ -8,12 +9,14 @@ namespace ArtPlatform_Test
         private ReportVerdict _reportVerdict;
         private User _user;
         private Report _report;
+        private Moderator _moderator;
 
         [SetUp]
         public void Setup()
         {
             _user = new User();
-            _report = new Report();
+            _moderator = new Moderator(1, "jank001", "Jan", "Kowalski", "My bio desc", "jank@code.com", "12345", new DateTime(2021, 12, 18));
+            _report = new Report(1, "spam", 3, 5, "comment", _user, _moderator);
             _reportVerdict = new ReportVerdict(_user, _report);
         }
 
@@ -42,7 +45,7 @@ namespace ArtPlatform_Test
         [Test]
         public void SetReport()
         {
-            Report newReport = new Report();
+            Report newReport = new Report(2, "spam", 3, 5, "comment", _user, _moderator);
             _reportVerdict.Report = newReport;
             Assert.AreEqual(_reportVerdict.Report, newReport);
         }
