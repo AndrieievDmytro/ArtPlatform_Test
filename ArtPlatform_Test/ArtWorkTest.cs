@@ -10,16 +10,18 @@ namespace ArtPlatform_Test
         private ArtWork _artWork;
         private List<string> _videoList;
         private List<string> _photoList;
-        private Post _post;
+        private List<Post> _post;
         private Artist _artist;
 
         [SetUp]
         public void Setup()
         {
 
+            _post = new List<Post>();
+            Post post = new Post(1,""); 
             string videoLink = "videoLink";
             string photoLink = "photoLink";
-            _post = new Post();
+            _post.Add(post);
             _artist = new Artist();
             _videoList = new List<string>();
             _photoList = new List<string>();
@@ -128,9 +130,10 @@ namespace ArtPlatform_Test
         [Test]
         public void SetPost()
         {
-            Post newPost = new Post();
-            _artWork.Post = newPost; 
-            Assert.AreEqual(_artWork.Post, newPost);
+            Post newPost = new Post(1,"");
+            _post.Add(newPost);
+            _artWork.Post[1] = newPost; 
+            Assert.AreEqual(_artWork.Post[1], newPost);
         }
 
 

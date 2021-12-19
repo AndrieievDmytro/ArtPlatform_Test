@@ -20,7 +20,8 @@ namespace ArtPlatform_Test
 
             string videoLink = "videoLink";
             string photoLink = "photoLink";
-            Post _post = new Post();
+            List<Post> _post = new List<Post>();
+            _post.Add(new Post(1,""));
             Artist _artist = new Artist();
             List<string> _videoList = new List<string>();
             List<string> _photoList = new List<string>();
@@ -84,7 +85,8 @@ namespace ArtPlatform_Test
         [Test]
         public void SetPurchasedArtWorks()
         {
-            Post _post = new Post();
+            List<Post> _post = new List<Post>();
+            _post.Add(new Post(1,""));
             Artist _artist = new Artist();
             List<string> _videoList = new List<string>();
             List<string> _photoList = new List<string>();
