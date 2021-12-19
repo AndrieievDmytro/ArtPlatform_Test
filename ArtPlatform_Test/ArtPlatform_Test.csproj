@@ -13,7 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\ArtPlatform\ArtPlatform\ArtPlatform.csproj" />
+    <ProjectReference Include="..\..\..\ArtPlatform\ArtPlatform\ArtPlatform.csproj" />
   </ItemGroup>
 
 </Project>
